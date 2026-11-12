@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supportpilot"
+version = "0.1.0"
+description = "Self-hosted open-source AI support chatbot — extractive retrieval over your own docs, $0 core, no API key needed"
+readme = "README.md"
+license = { text = "GPL-3.0-only" }
+requires-python = ">=3.11"
+authors = [{ name = "Tahir Younas — Tytechlabs" }]
+dependencies = []
+
+[project.scripts]
+supportpilot = "supportpilot.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["supportpilot*"]
+
+[tool.setuptools.package-data]
+supportpilot = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
